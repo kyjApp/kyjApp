@@ -4,11 +4,13 @@
       <x-header
       title="客有家租房"
       :left-options="{showBack:false}"
-      slot="header">
+      slot="header"
+      class="header"></x-header>
 
-      </x-header>
+      <search class="search"></search>
 
-      <search></search>
+      <panel :list="dataList" :type="type" class="panel"></panel>
+
       <tabbar slot="bottom">
         <tabbar-item>
           <img src="./assets/icon_nav_button.png" alt="" slot="icon">
@@ -19,13 +21,14 @@
           <span slot="label">可租房源</span>
         </tabbar-item>
       </tabbar>
+
     </view-box>
     <!-- <router-view></router-view> -->
   </div>
 </template>
 
 <script>
-import {ViewBox, XHeader, Tabbar, TabbarItem} from 'vux'
+import {ViewBox, XHeader, Tabbar, TabbarItem, Panel} from 'vux'
 import search from './components/search'
 export default {
   name: 'app',
@@ -34,7 +37,23 @@ export default {
     XHeader,
     Tabbar,
     TabbarItem,
-    search
+    search,
+    Panel
+  },
+  data () {
+    var dataList = []
+    for (var i = 0; i < 10; i++) {
+      dataList.push({
+        src: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
+        title: '标题一',
+        desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
+        url: '/component/cell'
+      })
+    }
+    return {
+      type: '2',
+      dataList: dataList
+    }
   }
 }
 </script>
@@ -48,14 +67,30 @@ export default {
   text-align: center;
   color: #2c3e50;
   /*margin-top: 60px;*/
-}
-#app{
   height:100%;
+}
+#app .header{
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  left: 0;
+  z-index: 9;
+}
+#app .search{
+  position:fixed;
+  top:46px;
+  left:0;
+  z-index:5;
+  width:100%;
+}
+#app .panel{
+  margin-top:90px;
 }
 html,body{
   margin:0;
   padding:0;
   width:100%;
   height:100%;
+  overflow: hidden;
 }
 </style>
