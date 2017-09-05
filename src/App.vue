@@ -45,8 +45,8 @@ export default {
     for (var i = 0; i < 10; i++) {
       dataList.push({
         src: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
-        title: '标题一',
-        desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
+        title: '玉泉营.万年花城二期',
+        desc: '112m²/302/3居室',
         url: '/component/cell'
       })
     }
