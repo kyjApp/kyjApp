@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
+    <view-box></view-box>
+    <!-- <router-view></router-view> -->
   </div>
 </template>
 
 <script>
+import {ViewBox} from 'vux'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    ViewBox
+  }
 }
 </script>
 
