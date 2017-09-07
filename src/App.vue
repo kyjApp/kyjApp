@@ -8,6 +8,7 @@
       class="header">
       </x-header>
       <search class="search"></search>
+      <tab></tab>
       <scroller
         :on-refresh="refresh"
         refresh-text="loading"
@@ -34,6 +35,8 @@
 <script>
 import {ViewBox, XHeader, Tabbar, TabbarItem, Panel} from 'vux'
 import search from './components/search'
+import tab from './components/tab'
+
 var refreshKey = ['A', 'B01', 'B02']
 var key = 0
 var start = 0
@@ -55,7 +58,8 @@ export default {
     Tabbar,
     TabbarItem,
     search,
-    Panel
+    Panel,
+    tab
   },
   data () {
     var dataList = []
@@ -125,7 +129,6 @@ export default {
           this.$refs.myRef.finishInfinite()
         }, 1000)
       })
-      // http://3g.163.com/touch/jsonp/sy/recommend/'+start+'-'+end+'.html'
     }
   }
 }
@@ -167,7 +170,7 @@ a{
   width:100%;
 }
 #app .panel{
-  margin-top:90px;
+  margin-top:135px;
 }
 #app .panel1{
   margin:0;
