@@ -12,8 +12,7 @@
         :on-refresh="refresh"
         refresh-text="loading"
         :on-infinite="infinite"
-        ref="myRef"
-       >
+        ref="myRef">
        <panel :list="dataList" :type="type" class="panel"></panel>
        <panel :list="moreDataList" :type="type" class="panel panel1"></panel>
       </scroller>
